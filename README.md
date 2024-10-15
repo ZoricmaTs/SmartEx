@@ -81,7 +81,26 @@ let animals = createCats();
 animals[0]();
 animals[5]();
 ```
+# Задача 3
+Необходимо найти сумму всех вершин, значение которых кратно 2
 
+## Решение
+
+```
+function SearchSum(tree) {
+  let sum = 0;
+
+  if (tree.value % 2 === 0) {
+    sum += tree.value;
+  }
+
+  for (let i = 0; i < tree.children.length; i+= 1) {
+    sum += SearchSum(tree.children[i])
+  }
+
+  return sum;
+}
+```
 # Задача 4
 Написать приложение используя React, которое может отрисовывать карточку для игры в лото.
 
